@@ -50,8 +50,10 @@
               hedgehog = buildIdris2Package { name = "hedgehog"; src = idris2-hedgehog; deps = [ elab-util sop pretty-show ]; };
             };
 
-          lib = {
-            inherit buildIdris2PackagePath;
+          overlay = self: super: {
+            lib = super.lib // {
+              inherit buildIdris2PackagePath;
+            };
           };
         }
       );
