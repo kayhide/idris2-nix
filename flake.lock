@@ -1,0 +1,113 @@
+{
+  "nodes": {
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1644229661,
+        "narHash": "sha256-1YdnJAsNy69bpcjuoKdOYQX0YxZBiCYZo4Twxerqv7k=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "3cecb5b042f7f209c56ffd8371b2711a290ec797",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "idris2-elab-util": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1632201198,
+        "narHash": "sha256-Yg96qpo79VYwXhg+H9EhXxf2CZ/1N8Dy6L6DayIMvS0=",
+        "owner": "stefan-hoeck",
+        "repo": "idris2-elab-util",
+        "rev": "b8bbc14f5299f5bf4d9a84c72f3236b791e85dbe",
+        "type": "github"
+      },
+      "original": {
+        "owner": "stefan-hoeck",
+        "ref": "v0.5.0",
+        "repo": "idris2-elab-util",
+        "type": "github"
+      }
+    },
+    "idris2-hedgehog": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1632203971,
+        "narHash": "sha256-0P8MJiQjytAddmmsYmrm4fFhCybSGi9mlLfQKeDHpZo=",
+        "owner": "stefan-hoeck",
+        "repo": "idris2-hedgehog",
+        "rev": "172fde98dd3a90f26f60a58bccdcfcd7e6037538",
+        "type": "github"
+      },
+      "original": {
+        "owner": "stefan-hoeck",
+        "ref": "v0.5.0",
+        "repo": "idris2-hedgehog",
+        "type": "github"
+      }
+    },
+    "idris2-pretty-show": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1632378177,
+        "narHash": "sha256-MK+RnV5VGRY3eNI+iBcZzi3r2rSc/utpF5Taaj2W/a8=",
+        "owner": "stefan-hoeck",
+        "repo": "idris2-pretty-show",
+        "rev": "4f6beeca0f1899bc8fcf2fe979ea293c00e466f8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "stefan-hoeck",
+        "repo": "idris2-pretty-show",
+        "rev": "4f6beeca0f1899bc8fcf2fe979ea293c00e466f8",
+        "type": "github"
+      }
+    },
+    "idris2-sop": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1632203586,
+        "narHash": "sha256-2AdfUud5W+/R+KFHOaPUO5Lu1xKbnUdcCRLT8sGB3fg=",
+        "owner": "stefan-hoeck",
+        "repo": "idris2-sop",
+        "rev": "a90f2e5c02b6fac09ad6e8339f0c8c3ad0ed1444",
+        "type": "github"
+      },
+      "original": {
+        "owner": "stefan-hoeck",
+        "ref": "v0.5.0",
+        "repo": "idris2-sop",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1644151317,
+        "narHash": "sha256-TpXGBYCFKvEN7Q+To45rn4kqTbLPY4f56rF6ymUGGRE=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "942b0817e898262cc6e3f0a5f706ce09d8f749f1",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "root": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "idris2-elab-util": "idris2-elab-util",
+        "idris2-hedgehog": "idris2-hedgehog",
+        "idris2-pretty-show": "idris2-pretty-show",
+        "idris2-sop": "idris2-sop",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
