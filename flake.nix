@@ -26,8 +26,8 @@
   };
 
   outputs = { self, nixpkgs, flake-utils, idris2-elab-util, idris2-sop, idris2-pretty-show, idris2-hedgehog }:
-    flake-utils.lib.eachDefaultSystem
-      (system:
+    let
+      par-system = system:
         let
           pkgs = import nixpkgs { inherit system; };
 
@@ -37,7 +37,7 @@
 
           buildIdris2Package = idris2-nix.build;
 
-          buildIdris2PackagePath = idris2-nix.buildPackagePath;
+          buildIdris2PackagePath = idris2-nix.buildPackagePath pkgs.lib;
 
         in
         {
@@ -49,12 +49,24 @@
               pretty-show = buildIdris2Package { name = "pretty-show"; src = idris2-pretty-show; deps = [ elab-util sop ]; };
               hedgehog = buildIdris2Package { name = "hedgehog"; src = idris2-hedgehog; deps = [ elab-util sop pretty-show ]; };
             };
+        };
+    in
+    # "i686-linux" fails when `nix flake check`
+    # (flake-utils.lib.eachSystem [ "x86_64-linux" ] par-system)
+    (flake-utils.lib.eachDefaultSystem par-system)
+    // {
+      overlay = final: prev:
+        let
+          idris2 = final.idris2;
 
-          overlay = self: super: {
-            lib = super.lib // {
-              inherit buildIdris2PackagePath;
-            };
+          idris2-nix = prev.callPackage ./. { pkgs = prev; };
+
+          buildIdris2PackagePath = idris2-nix.buildPackagePath;
+        in
+        {
+          lib = prev.lib // {
+            inherit buildIdris2PackagePath;
           };
-        }
-      );
+        };
+    };
 }
