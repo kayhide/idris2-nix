@@ -15,7 +15,7 @@
     };
 
     idris2-pretty-show = {
-      url = "github:stefan-hoeck/idris2-pretty-show/4f6beeca0f1899bc8fcf2fe979ea293c00e466f8";
+      url = "github:stefan-hoeck/idris2-pretty-show/v0.5.0";
       flake = false;
     };
 
